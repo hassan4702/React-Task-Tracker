@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 function App() {
-  const name='hassan'
   const [tasks,setTasks]=useState([
       {
           id:1,
@@ -29,9 +28,16 @@ function App() {
     setTasks(tasks.filter((task)=>task.id!==id))
   }
 
-  // const addTask=(id)=>{
-  //   setTasks(...Tasks,{id:id,})
-  // }
+  const addTask=(task)=>{
+    const id=Math.floor(Math.random()*10000)+1
+    console.log(id)
+    const newTask={id,...task}
+    console.log(newTask)
+
+    setTasks([...tasks,newTask])
+    console.log(tasks)
+
+  }
 
   const toggleReminder=(id)=>{
     setTasks(tasks.map((task)=>task.id===id?{...task,reminder:!task.reminder}:task))
@@ -41,7 +47,7 @@ function App() {
 
     <div className="container">
       <Header title='Task Tracker'/>
-      <AddTask/>
+      <AddTask onAdd={addTask}/>
       {tasks.length>0?<Tasks tasks={tasks}  onDelete={deleteTask} onToggle={toggleReminder}/> : 'No Tasks '}
     </div>
   );
