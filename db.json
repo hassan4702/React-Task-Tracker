@@ -11,6 +11,12 @@
       "text": "Meeting with Horizon",
       "time": "Friday 21 at 3:30pm",
       "reminder": false
+    },
+    {
+      "id": 5,
+      "text": "Meeting with Dr hmood",
+      "time": "Tuesday 8 at 7:30pm",
+      "reminder": true
     }
   ]
 }
