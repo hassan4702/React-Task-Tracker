@@ -35,9 +35,6 @@ function App() {
   };
 
   const addTask = async (task) => {
-    // const id = Math.floor(Math.random() * 10000) + 1;
-    // const newTask = { id, ...task };
-    // setTasks([...tasks, newTask]);
     const res = await fetch("http://localhost:5000/tasks", {
       method: "POST",
       headers: {
@@ -99,10 +96,6 @@ function App() {
           ></Route>
           <Route path="/about" element={<About />} />
         </Routes>
-
-        {/* <Routes>
-
-        </Routes> */}
         <Footer />
       </div>
     </Router>
